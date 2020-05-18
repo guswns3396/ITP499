@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block title %}
+	Prediction Result
+{% endblock title %}
+
+{% block content %}
+	<div class="row row-margin"></div>
+	<div class="row justify-content-around row-margin">
+		<h4>
+			It is predicted that there will be about {{ pred }} confirmed COVID-19 cases on {{ date }}
+		</h4>
+	</div>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

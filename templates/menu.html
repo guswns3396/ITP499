@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block title %}
+	Menu
+{% endblock title %}
+{% block content %}
+	<div class="row row-margin center">
+		<div class="col col-12 heading">
+			<h2>Welcome {{ session["username"] }}!</h2>
+		</div>
+	</div>
+	<div class="row justify-content-around row-margin">
+		<div class="col col-10 col-md-5 box">
+			<h4>Find COVID-19 Near You (USA)</h4>
+			<hr>
+			<p>Use <a href="https://ip-api.com/"><strong>"ipinfo"</strong></a> API combined with <a href="https://covid19api.com/"><strong>"covid-19"</strong></a> API to see how many cases are near you within the last week</p>
+			<a class="btn btn-color btn-position rounded-0" href="/find" role="button">FIND</a>
+		</div>
+		<div class="col col-10 col-md-5 box">
+			<h4>Predict Number of Cases</h4>
+			<hr>
+			<p>Use our Machine Learning model trained on number of cases since 2020-03-22 to predict number of COVID-19 cases</p>
+			<a class="btn btn-color btn-position rounded-0" href="/predict" role="button">PREDICT</a>
+		</div>
+	</div>
+{% endblock content %}

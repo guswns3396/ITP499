@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block title %}
+	Find
+{% endblock title %}
+
+{% block content %}
+	<div class="row row-margin center">
+		<div class="col col-12 heading">
+			<h2>Please Enter Your Search Radius</h2>
+		</div>
+	</div>
+	<form action="/find_result" method="GET">
+		<div class="form-group row">
+			<label for="radius-id" class="col-sm-3 col-form-label text-sm-right">Radius(km):</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="radius-id" name="radius">
+				<small class="form-text text-danger hidden">
+					You must type in a valid radius (greater than 0)
+				</small>
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-9 mt-2">
+				<button type="submit" class="btn btn-color rounded-0">Search</button>
+			</div>
+		</div>
+	</form>
+{% endblock content %}
+{% block js %}
+	<script src="static/find.js"></script>
+{% endblock js %}

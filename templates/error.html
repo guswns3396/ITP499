@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block title %}
+	Error
+{% endblock title %}
+{% block content %}
+	<div class="row row-margin justify-content-center">
+		<div class="col col-xs-10 welcome-message">
+			<h2>
+				Oops something went wrong!
+			</h2>
+			<h6>
+			{% block errmsg %}
+				If you were registering, try a different username
+			{% endblock errmsg %}
+			</h6>
+		</div>
+	</div>
+{% endblock content %}

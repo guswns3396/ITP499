@@ -1,0 +1,167 @@
+body {
+	background-color: #e5e4e3;
+	min-width: 576px;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.header {
+	background: -webkit-linear-gradient(top, #860000, #5e0000);
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.center {
+	text-align: center;
+}
+#title a {
+	color: white;
+	text-decoration: none;
+}
+#title h1 {
+	margin: 0;
+	display: inline;
+}
+#title span {
+	color: #FFC72C;
+}
+.log {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.log h5 {
+	margin: 0 0;
+}
+.log a {
+	color: white;
+	text-decoration: underline;
+}
+#icon {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+#icon img {
+	width: 50px;
+	height: 50px;
+}
+.button-color {
+	background-color: #e5e4e3;
+}
+.item-color {
+	color: white;
+}
+.navbar-nav {
+	text-align: left;
+}
+
+.home-image {
+	background-color: #514F4D;
+}
+.home-image h6 {
+	padding: 3px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.row-margin {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+.row-margin .welcome-message {
+	text-align: center;
+	font-style: italic;
+}
+
+.box {
+	background-color: white;
+	border: 2px solid #514F4D;
+	padding: 10px;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	font-size: 20px;
+	position: relative;
+}
+.box h4 {
+	color: #990000;
+}
+.btn-color {
+	color: white;
+	background-color: #a3a09b; 
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.btn-color-danger {
+	color: white;
+	background-color: #a3a09b; 
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.btn-color:hover {
+	color: white;
+	background-color: #FFC72C;
+}
+.btn-color-danger:hover {
+	color: white;
+	background-color: #990000;
+}
+.btn-position {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+.img-box {
+	text-align: center;
+	padding: 10px;
+}
+.img-box img {
+	width: 100%;
+}
+.img-box:hover img {
+	opacity: 0.6;
+}
+
+#results {
+	margin-left: 30px;
+}
+
+#desc-box h6 {
+	visibility: hidden;
+	color: #990000;
+}
+#desc-box:hover {
+	cursor: pointer;
+}
+#desc-box:hover h6 {
+	visibility: visible;
+}
+.hidden {
+	display: none;
+}
+
+#signup {
+	margin-left: 10px;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+	background: #990000;
+}
+.custom-range::-webkit-slider-thumb {
+	background: #FFC72C;
+}
+
+#page .page-color {
+	color: #990000;
+}
+#page .page-active {
+	background: #FFC72C;
+}

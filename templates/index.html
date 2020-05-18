@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    <title>
+        {% block title %}
+            Home
+        {% endblock %}
+    </title>
+{% endblock head %}
+</head>
+
+<body>
+{% block body %}
+    <div class="container-fluid">
+		<div class="row header">
+			<!-- nav bar -->
+			<div class="col col-3 center">
+				<nav class="navbar navbar-expand-lg navbar-light">
+				  <button class="navbar-toggler button-color" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNav">
+				    <ul class="navbar-nav">
+				      <li class="nav-item">
+				        <a class="nav-link" href="/"><span class="item-color">Menu</span></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="/find"><span class="item-color">Find</span></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="/predict"><span class="item-color">Predict</span></a>
+				      </li>
+				    </ul>
+				  </div>
+				</nav>
+			</div>
+			<!-- title -->
+			<div class="col col-6 center" id="title">
+				<a href="/">
+					<h1><span>COVID-19 </span>Near Me</h1>
+				</a>
+			</div>
+			{% if "username" not in session %}
+				<div class="col col-2 item-color log">
+					<a href="/">LOG IN</a>
+				</div>
+			{% else %}
+				<div class="col col-1 item-color log">
+					<h5>{{ session["username"] }}</h5>
+				</div>
+				<div class="col col-1 item-color log">
+					<a href="/logout">LOG OUT</a>
+				</div>
+			{% endif %}
+			<!-- icon -->
+			<div class="col col-1" id="icon">
+				<img src="static/icon.png" alt="COVID icon"/>
+			</div>
+		</div>
+
+		{% block content %}
+			<!-- top section -->
+			<div class="row home-image">
+		    	<img class="d-block w-100" src="static/home-image.jpg" alt="First slide">
+				<h6>CORONA VIRUS</h6>
+			</div>
+
+			<div class="row row-margin justify-content-center">
+				<div class="col col-xs-10 welcome-message">
+					<h2>Find COVID-19 Cases Near You (USA)</h2>
+					<h5>First log in or sign up...</h5>
+				</div>
+			</div>
+
+			<form action="/login" method="POST">
+				<div class="form-group row">
+					<label for="name-id" class="col-sm-3 col-form-label text-sm-right">User Name:</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="name-id" name="user_name">
+						<small class="form-text text-danger hidden">
+							You must type in a user name
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="pw-id" class="col-sm-3 col-form-label text-sm-right">Password:</label>
+					<div class="col-sm-6">
+						<input type="password" class="form-control" id="pw-id" name="user_pass">
+						<small class="form-text text-danger hidden">
+							You must type in a password
+						</small>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-8 mt-2">
+						<button type="submit" class="btn btn-color rounded-0">LOG IN</button>
+						<a id="signup" href="/signup">or SIGN UP here</a>
+					</div>
+				</div>
+			</form>
+
+			<div class="row row-margin"></div>
+		{% endblock content %}
+
+	{% block BSJS %}
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	{% endblock BSJS %}
+	{% block js %}
+		<script src="/static/index.js"></script>
+	{% endblock js %}
+{% endblock body %}
+</body>
+
+</html>

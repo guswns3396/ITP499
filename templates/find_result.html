@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}
+	Result
+{% endblock title %}
+{% block content %}
+	<div class="row row-margin"></div>
+	<div class="row justify-content-around row-margin">
+		<h4>
+			There are {{ count }} confirmed COVID-19 cases within {{ radius }} km of your position within the last 7 days
+		</h4>
+	</div>
+{% endblock content %}

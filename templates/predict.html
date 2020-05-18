@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block title %}
+	Predict
+{% endblock title %}
+
+{% block content %}
+	<div class="row row-margin center">
+		<div class="col col-12 heading">
+			<h2>Please Enter Prediction Date</h2>
+		</div>
+	</div>
+	<form action="/predict_result" method="POST">
+		<div class="form-group row">
+		  	<label for="date-id" class="col-sm-3 col-form-label text-sm-right">Date:</label>
+		  	<div class="col-sm-6">
+		    	<input class="form-control" type="date" id="date-id" name=date>
+				<small class="form-text text-danger hidden">
+					You must type in a date after 03/22/2020
+				</small>
+		  	</div>
+	  	</div>
+		<div class="form-group row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-9 mt-2">
+				<button type="submit" class="btn btn-color rounded-0">Predict</button>
+			</div>
+		</div>
+	</form>
+{% endblock content %}
+{% block js %}
+	<script src="static/predict.js"></script>
+{% endblock js %}
